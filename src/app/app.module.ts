@@ -12,6 +12,9 @@ import { HomeComponent } from './client/home/home.component';
 import { NavAdminComponent } from './admin/nav-admin/nav-admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { CategoryAdminComponent } from './admin/category-admin/category-admin.component';
+import { ProductAdminComponent } from './admin/product-admin/product-admin.component';
+import { AdminProductListComponent } from './admin/product-admin/admin-product-list/admin-product-list.component';
+import { AdminProductFromComponent } from './admin/product-admin/admin-product-from/admin-product-from.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CategoryAdminComponent } from './admin/category-admin/category-admin.co
     HomeComponent,
     NavAdminComponent,
     DashboardComponent,
-    CategoryAdminComponent
+    CategoryAdminComponent,
+    ProductAdminComponent,
+    AdminProductListComponent,
+    AdminProductFromComponent
   ],
   imports: [
     BrowserModule,
