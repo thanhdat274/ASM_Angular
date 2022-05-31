@@ -9,6 +9,9 @@ import { ClientComponent } from './client/client.component';
 import { FooterClientComponent } from './client/layouts/footer-client/footer-client.component';
 import { HeaderClientComponent } from './client/layouts/header-client/header-client.component';
 import { HomeComponent } from './client/home/home.component';
+import { NavAdminComponent } from './admin/nav-admin/nav-admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { CategoryAdminComponent } from './admin/category-admin/category-admin.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { HomeComponent } from './client/home/home.component';
     ClientComponent,
     FooterClientComponent,
     HeaderClientComponent,
-    HomeComponent
+    HomeComponent,
+    NavAdminComponent,
+    DashboardComponent,
+    CategoryAdminComponent
   ],
   imports: [
     BrowserModule,
