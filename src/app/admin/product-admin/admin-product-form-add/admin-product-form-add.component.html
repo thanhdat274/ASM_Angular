@@ -18,7 +18,7 @@
                       <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                           <div class="col-span-6">
                               <label class="block text-sm font-medium text-gray-700">Tên danh mục <span class="text-[red]">*</span></label>
-                              <select name="" id="cateId" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md pl-[10px]">
+                              <select name="" formControlName="categoryId" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md pl-[10px]">
                                       <option value="${post.id}"></option>
                               </select>
                           </div>
@@ -31,26 +31,32 @@
                           <div class="col-span-6">
                               <label class="block text-sm font-medium text-gray-700">Giá <span class="text-[red]">*</span></label>
                               <input type="number" formControlName="price" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
+                              <app-show-validate [field]="productForm.get('price')" key="Giá sẩn phẩm"></app-show-validate>
                           </div>
                           <div class="col-span-6">
                               <label class="block text-sm font-medium text-gray-700">Số lượng <span class="text-[red]">*</span></label>
                               <input type="number" formControlName="quantity" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
+                              <app-show-validate [field]="productForm.get('quantity')" key="Số lượng sẩn phẩm"></app-show-validate>
                           </div>
                           <div>
                               <label class="block text-sm font-medium text-gray-700">Mô tả nhỏ <span class="text-[red]">*</span></label>
                               <div class="mt-1">
                                   <textarea  rows="5" formControlName="short_desc" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
                               </div>
+                              <app-show-validate [field]="productForm.get('short_desc')" key="Mô tả nhỏ sẩn phẩm"></app-show-validate>
                           </div>
                           <div>
                               <label class="block text-sm font-medium text-gray-700">Mô tả <span class="text-[red]">*</span></label>
                               <div class="mt-1">
                                   <textarea  rows="5" formControlName="desc" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
                               </div>
+                              <app-show-validate [field]="productForm.get('desc')" key="Mô tả sẩn phẩm"></app-show-validate>
                           </div>
                           <div>
                               <label class="block text-sm font-medium text-gray-700">
-                              Hình ảnh <span class="text-[red]">*</span></label>
+                                Hình ảnh
+                                <span class="text-[red]">*</span>
+                              </label>
                               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                   <div class="space-y-1 text-center">
                                       <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
@@ -70,12 +76,14 @@
                                       PNG, JPG, GIF up to 10MB
                                       </p>
                                   </div>
+                                  <app-show-validate [field]="productForm.get('file-upload')" key="Hình ảnh sẩn phẩm"></app-show-validate>
                               </div>
+
                           </div>
                       </div>
                       <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                           <a routerLink="/admin/products" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Hủy</a>
-                          <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm mới</button>
+                          <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" [disabled]="!productForm.valid">Thêm mới</button>
                       </div>
                   </div>
               </form>

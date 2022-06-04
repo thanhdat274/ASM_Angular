@@ -15,6 +15,6 @@ export type ProductAdd = {
   quantity: number,
   short_desc: string,
   desc: string,
-  // img: string,
-  // categoryId: number
+  img: string,
+  categoryId: number
 }

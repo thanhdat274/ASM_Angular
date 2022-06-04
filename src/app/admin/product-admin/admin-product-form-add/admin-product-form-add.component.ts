@@ -21,11 +21,21 @@ export class AdminProductFormAddComponent implements OnInit {
         Validators.minLength(6),
         Validators.maxLength(32)
       ]),
-      price: new FormControl(0),
-      quantity: new FormControl(0),
-      short_desc: new FormControl(''),
-      desc: new FormControl(''),
-      img: new FormControl(''),
+      price: new FormControl("",[
+        Validators.required
+      ]),
+      quantity: new FormControl("",[
+        Validators.required
+      ]),
+      short_desc: new FormControl('',[
+        Validators.required
+      ]),
+      desc: new FormControl('',[
+        Validators.required
+      ]),
+      img: new FormControl('',[
+        Validators.required
+      ]),
       // categoryId: new FormControl(0)
     })
   }
@@ -42,7 +52,7 @@ export class AdminProductFormAddComponent implements OnInit {
   }
   onSubmit() {
 
-    console.log(this.productForm.value);
+    // console.log(this.productForm.value);
     const submitData = this.productForm.value;
     return this.productService.addProducts(submitData).subscribe(data => {
       this.router.navigateByUrl('/admin/products')
