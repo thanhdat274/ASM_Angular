@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { AdminProductFromComponent } from './admin/product-admin/admin-product-from/admin-product-from.component';
+import { AdminProductDetailComponent } from './admin/product-admin/admin-product-detail/admin-product-detail.component';
+import { AdminProductFormAddComponent } from './admin/product-admin/admin-product-form-add/admin-product-form-add.component';
+import { AdminProductFormEditComponent } from './admin/product-admin/admin-product-form-edit/admin-product-form-edit.component';
 import { AdminProductListComponent } from './admin/product-admin/admin-product-list/admin-product-list.component';
 import { ProductAdminComponent } from './admin/product-admin/product-admin.component';
 import { ClientComponent } from './client/client.component';
@@ -37,11 +39,15 @@ const routes: Routes = [
           },
           {
             path: 'add',
-            component: AdminProductFromComponent
+            component: AdminProductFormAddComponent
           },
           {
             path: 'edit/:id',
-            component: AdminProductFromComponent
+            component: AdminProductFormEditComponent
+          },
+          {
+            path: ':id',
+            component: AdminProductDetailComponent
           }
         ]
       }

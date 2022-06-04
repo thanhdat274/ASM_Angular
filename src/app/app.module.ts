@@ -14,7 +14,12 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { CategoryAdminComponent } from './admin/category-admin/category-admin.component';
 import { ProductAdminComponent } from './admin/product-admin/product-admin.component';
 import { AdminProductListComponent } from './admin/product-admin/admin-product-list/admin-product-list.component';
-import { AdminProductFromComponent } from './admin/product-admin/admin-product-from/admin-product-from.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminProductDetailComponent } from './admin/product-admin/admin-product-detail/admin-product-detail.component';
+import { AdminProductFormAddComponent } from './admin/product-admin/admin-product-form-add/admin-product-form-add.component';
+import { AdminProductFormEditComponent } from './admin/product-admin/admin-product-form-edit/admin-product-form-edit.component';
+import { ShowValidateComponent } from './show-validate/show-validate.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +34,17 @@ import { AdminProductFromComponent } from './admin/product-admin/admin-product-f
     CategoryAdminComponent,
     ProductAdminComponent,
     AdminProductListComponent,
-    AdminProductFromComponent
+    AdminProductDetailComponent,
+    AdminProductFormAddComponent,
+    AdminProductFormEditComponent,
+    ShowValidateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
