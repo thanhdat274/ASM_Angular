@@ -11,10 +11,10 @@ export type Product = {
 
 export type ProductAdd = {
   name: string,
-  // price: number,
-  // quantity: number,
-  // short_desc: string,
-  // desc: string,
+  price: number,
+  quantity: number,
+  short_desc: string,
+  desc: string,
   // img: string,
   // categoryId: number
 }

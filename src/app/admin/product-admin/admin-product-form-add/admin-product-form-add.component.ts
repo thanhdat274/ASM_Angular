@@ -1,4 +1,7 @@
+import { ProductService } from './../../../services/product.service';
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin-product-form-add',
@@ -7,9 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminProductFormAddComponent implements OnInit {
 
-  constructor() { }
+  productForm: FormGroup;
+  constructor(
+    private productService: ProductService,
+    private router: Router
+  ) {
+    this.productForm = new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(32)
+      ]),
+      price: new FormControl(0),
+      quantity: new FormControl(0),
+      short_desc: new FormControl(''),
+      desc: new FormControl(''),
+      img: new FormControl(''),
+      // categoryId: new FormControl(0)
+    })
+  }
 
   ngOnInit(): void {
   }
 
+  onValidateNameProduct(control: AbstractControl): ValidationErrors | null {
+    const { value } = control;
+    if (!value.includes('product')) {
+      return { hasProductError: true };
+    }
+    return null;
+  }
+  onSubmit() {
+
+    console.log(this.productForm.value);
+    const submitData = this.productForm.value;
+    return this.productService.addProducts(submitData).subscribe(data => {
+      this.router.navigateByUrl('/admin/products')
+    })
+  }
 }
