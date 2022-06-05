@@ -1,4 +1,4 @@
-import { ProductService } from './../../../services/product.service';
+import { ProductService } from 'src/app/services/product/product.service';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -21,10 +21,10 @@ export class AdminProductFormAddComponent implements OnInit {
         Validators.minLength(6),
         Validators.maxLength(32)
       ]),
-      price: new FormControl("",[
+      price: new FormControl(0,[
         Validators.required
       ]),
-      quantity: new FormControl("",[
+      quantity: new FormControl(0,[
         Validators.required
       ]),
       short_desc: new FormControl('',[

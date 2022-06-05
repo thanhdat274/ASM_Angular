@@ -21,6 +21,10 @@ import { AdminProductDetailComponent } from './admin/product-admin/admin-product
 import { AdminProductFormAddComponent } from './admin/product-admin/admin-product-form-add/admin-product-form-add.component';
 import { AdminProductFormEditComponent } from './admin/product-admin/admin-product-form-edit/admin-product-form-edit.component';
 import { ShowValidateComponent } from './show-validate/show-validate.component';
+import { AdminCategoryListComponent } from './admin/category-admin/admin-category-list/admin-category-list.component';
+import { AdminCategoryFormAddComponent } from './admin/category-admin/admin-category-form-add/admin-category-form-add.component';
+import { AdminCategoryFormEditComponent } from './admin/category-admin/admin-category-form-edit/admin-category-form-edit.component';
+import { AdminCategoryDetailComponent } from './admin/category-admin/admin-category-detail/admin-category-detail.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { ShowValidateComponent } from './show-validate/show-validate.component';
     AdminProductDetailComponent,
     AdminProductFormAddComponent,
     AdminProductFormEditComponent,
-    ShowValidateComponent
+    ShowValidateComponent,
+    AdminCategoryListComponent,
+    AdminCategoryFormAddComponent,
+    AdminCategoryFormEditComponent,
+    AdminCategoryDetailComponent
   ],
   imports: [
     BrowserModule,

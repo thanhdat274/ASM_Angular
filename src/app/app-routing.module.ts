@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { AdminCategoryDetailComponent } from './admin/category-admin/admin-category-detail/admin-category-detail.component';
+import { AdminCategoryFormAddComponent } from './admin/category-admin/admin-category-form-add/admin-category-form-add.component';
+import { AdminCategoryFormEditComponent } from './admin/category-admin/admin-category-form-edit/admin-category-form-edit.component';
+import { AdminCategoryListComponent } from './admin/category-admin/admin-category-list/admin-category-list.component';
+import { CategoryAdminComponent } from './admin/category-admin/category-admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminProductDetailComponent } from './admin/product-admin/admin-product-detail/admin-product-detail.component';
 import { AdminProductFormAddComponent } from './admin/product-admin/admin-product-form-add/admin-product-form-add.component';
@@ -28,6 +33,28 @@ const routes: Routes = [
       {
         path:'',
         component: DashboardComponent
+      },
+      {
+        path:'category',
+        component: CategoryAdminComponent,
+        children:[
+          {
+            path:'',
+            component:AdminCategoryListComponent
+          },
+          {
+            path: 'add',
+            component: AdminCategoryFormAddComponent
+          },
+          {
+            path: 'edit/:id',
+            component: AdminCategoryFormEditComponent
+          },
+          {
+            path: ':id',
+            component: AdminCategoryDetailComponent
+          }
+        ]
       },
       {
         path:'products',

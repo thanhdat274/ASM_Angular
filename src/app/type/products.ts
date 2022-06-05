@@ -16,5 +16,5 @@ export type ProductAdd = {
   short_desc: string,
   desc: string,
   img: string,
-  categoryId: number
+  // categoryId: number
 }
