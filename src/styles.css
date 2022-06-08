@@ -35,3 +35,30 @@
       @apply  hover:text-[#d51c24]
   }
 }
+
+.sub-menu li{
+  display: block;
+  padding: 0 25px;
+  line-height: 50px;
+  color: black;
+  text-decoration: none;
+}
+nav ul li:hover>a{
+  opacity: .7;
+}
+.sub-menu{
+  display: none;
+  min-width: 300px;
+  position: absolute;
+}
+.sub-menu li{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  text-align: left;
+}
+
+nav  li:hover > ul{
+  display:  block;
+}

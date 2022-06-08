@@ -25,6 +25,7 @@ import { AdminCategoryListComponent } from './admin/category-admin/admin-categor
 import { AdminCategoryFormAddComponent } from './admin/category-admin/admin-category-form-add/admin-category-form-add.component';
 import { AdminCategoryFormEditComponent } from './admin/category-admin/admin-category-form-edit/admin-category-form-edit.component';
 import { AdminCategoryDetailComponent } from './admin/category-admin/admin-category-detail/admin-category-detail.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AdminCategoryDetailComponent } from './admin/category-admin/admin-categ
     NgbModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

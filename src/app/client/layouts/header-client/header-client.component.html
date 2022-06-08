@@ -6,10 +6,10 @@
                     <a routerLink="https://www.facebook.com/nxbkimdong" target="_blank">
                         <i class="fa fa-facebook  text-sky-700 " aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.instagram.com/kimdongbooks/" target="_blank" class="ins-icon">
+                    <a routerLink="https://www.instagram.com/kimdongbooks/" target="_blank" class="ins-icon">
                         <i class="fa fa-instagram mx-[20px] text-pink-500" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.youtube.com/user/KimDongPublishingHou" target="_blank" class="yt-icon">
+                    <a routerLink="https://www.youtube.com/user/KimDongPublishingHou" target="_blank" class="yt-icon">
                         <i class="fa fa-youtube-play text-red-500" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -18,7 +18,7 @@
                 <div class="flex">
                     <i class="fa fa-rss my-auto mr-[10px]"></i>
                     <marquee behavior="scroll" direction="left">
-                      <p> Chào mừng bạn đến với Kim Đồng Book. Nếu bạn cần giúp đỡ, hãy liên hệ với chúng tôi qua hotline: (+84) 1900571595 hoặc email: cskh_online@nxbkimdong.com.vn.</p>
+                        <p> Chào mừng bạn đến với Kim Đồng Book. Nếu bạn cần giúp đỡ, hãy liên hệ với chúng tôi qua hotline: (+84) 1900571595 hoặc email: cskh_online@nxbkimdong.com.vn.</p>
                     </marquee>
                 </div>
             </div>
@@ -80,13 +80,30 @@
                         <a routerLink="/" class="menu-item">Trang chủ</a>
                     </li>
                     <li>
-                        <a routerLink="/" class="menu-item">Điện thoại</a>
+                        <a routerLink="#" class="menu-item">
+                            <i class="fa-solid fa-list-dropdown"></i>
+                            Danh mục sản phẩm
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a routerLink="#">
+                                    <i class="fa-solid fa-books"></i>
+                                    Thực tập sinh chuyên đề
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="#">
+                                    <i class="fa-solid fa-books"></i>
+                                    Sản xuất phần mềm
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a routerLink="/blog" class="menu-item">Tin tức công nghệ</a>
+                        <a routerLink="/blog" class="menu-item">Tin tức</a>
                     </li>
                     <li>
-                        <a routerLink="/" class="menu-item">Liên hệ</a>
+                        <a routerLink="/" class="menu-item">Giới thiệu</a>
                     </li>
                 </ul>
             </nav>
