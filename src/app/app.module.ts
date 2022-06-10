@@ -26,6 +26,11 @@ import { AdminCategoryFormAddComponent } from './admin/category-admin/admin-cate
 import { AdminCategoryFormEditComponent } from './admin/category-admin/admin-category-form-edit/admin-category-form-edit.component';
 import { AdminCategoryDetailComponent } from './admin/category-admin/admin-category-detail/admin-category-detail.component';
 import { SwiperModule } from 'swiper/angular';
+import { SigninComponent } from './client/auth/signin/signin.component';
+import { SignupComponent } from './client/auth/signup/signup.component';
+import { ProductClientListComponent } from './client/product/product-client-list/product-client-list.component';
+import { ProductClientDetailComponent } from './client/product/product-client-detail/product-client-detail.component';
+import { CartComponent } from './client/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,12 @@ import { SwiperModule } from 'swiper/angular';
     AdminCategoryListComponent,
     AdminCategoryFormAddComponent,
     AdminCategoryFormEditComponent,
-    AdminCategoryDetailComponent
+    AdminCategoryDetailComponent,
+    SigninComponent,
+    SignupComponent,
+    ProductClientListComponent,
+    ProductClientDetailComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

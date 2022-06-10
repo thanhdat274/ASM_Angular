@@ -12,8 +12,13 @@ import { AdminProductFormAddComponent } from './admin/product-admin/admin-produc
 import { AdminProductFormEditComponent } from './admin/product-admin/admin-product-form-edit/admin-product-form-edit.component';
 import { AdminProductListComponent } from './admin/product-admin/admin-product-list/admin-product-list.component';
 import { ProductAdminComponent } from './admin/product-admin/product-admin.component';
+import { SigninComponent } from './client/auth/signin/signin.component';
+import { SignupComponent } from './client/auth/signup/signup.component';
+import { CartComponent } from './client/cart/cart.component';
 import { ClientComponent } from './client/client.component';
 import { HomeComponent } from './client/home/home.component';
+import { ProductClientDetailComponent } from './client/product/product-client-detail/product-client-detail.component';
+import { ProductClientListComponent } from './client/product/product-client-list/product-client-list.component';
 
 const routes: Routes = [
   {
@@ -23,6 +28,18 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'sanpham',
+        component: ProductClientListComponent
+      },
+      {
+        path: 'sanpham/:id',
+        component: ProductClientDetailComponent
+      },
+      {
+        path:'cart',
+        component: CartComponent
       }
     ]
   },
@@ -78,6 +95,19 @@ const routes: Routes = [
           }
         ]
       }
+    ]
+  },
+  {
+    path: 'auth',
+    children:[
+      {
+        path:'signin',
+        component: SigninComponent
+      },
+      {
+        path:'signup',
+        component: SignupComponent
+      },
     ]
   }
 ];

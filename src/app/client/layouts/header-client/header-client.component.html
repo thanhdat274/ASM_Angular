@@ -25,13 +25,13 @@
             <div class="grid grid-cols-1 mx-auto">
                 <ul class="flex">
                     <li class="mx-4">
-                        <a routerLink="signup">Đăng ký</a>
+                        <a routerLink="/auth/signup">Đăng ký</a>
                     </li>
                     <li class="mx-4 text-[#f1aa0c]">
                         <a routerLink="#">|</a>
                     </li>
                     <li class="mx-4">
-                        <a routerLink="signin">Đăng nhập</a>
+                        <a routerLink="/auth/signin">Đăng nhập</a>
                     </li>
                 </ul>
             </div>
@@ -80,21 +80,15 @@
                         <a routerLink="/" class="menu-item">Trang chủ</a>
                     </li>
                     <li>
-                        <a routerLink="#" class="menu-item">
+                        <a routerLink="/sanpham" class="menu-item">
                             <i class="fa-solid fa-list-dropdown"></i>
                             Danh mục sản phẩm
                         </a>
                         <ul class="sub-menu">
-                            <li>
-                                <a routerLink="#">
+                            <li *ngFor="let cate of category">
+                                <a routerLink="/sanpham/{{cate._id}}">
                                     <i class="fa-solid fa-books"></i>
-                                    Thực tập sinh chuyên đề
-                                </a>
-                            </li>
-                            <li>
-                                <a routerLink="#">
-                                    <i class="fa-solid fa-books"></i>
-                                    Sản xuất phần mềm
+                                    {{cate.name}}
                                 </a>
                             </li>
                         </ul>

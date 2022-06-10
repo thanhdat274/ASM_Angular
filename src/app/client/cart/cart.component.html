@@ -1,0 +1,95 @@
+<main class="my-[20px]">
+  <div class="w-[1280px] py-[10px] flex border-b-2 border-[#f2f2f2] mx-auto">
+      <div class="">
+          <a routerLink="/" class="font-semibold">Trang chủ</a>
+      </div>
+      <div class="mx-2 text-[#5d5f6c]">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </div>
+      <div class="font-semibold">
+          Giỏ hàng
+      </div>
+  </div>
+  <div class="w-[1280px] mx-auto">
+      <div class="my-[20px]">
+          <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+          Giỏ hàng của bạn
+          </h2>
+      </div>
+      <div class="flex flex-col">
+          <div class="my-2">
+              <div class="py-2 align-middle inline-block w-[1280px]">
+                  <div class="shadow overflow-hidden border-b border-gray-200">
+                      <table class="min-w-full divide-y divide-gray-200">
+                          <thead class="bg-gray-50">
+                              <tr>
+                                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      Hình ảnh
+                                  </th>
+                                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      tên sản phẩm
+                                  </th>
+                                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      Số lượng sản phẩm
+                                  </th>
+                                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      Giá sản phẩm
+                                  </th>
+                                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      Tổng giá
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody class="bg-white divide-y divide-gray-200">
+                                  <tr>
+                                      <td class="px-6 py-4">
+                                          <div class="flex items-center">
+                                              <div class="flex-shrink-0 h-[150px] w-[150px]">
+                                                  <img class="h-[150px] w-[150px]" src="https://picsum.photos/200/300" alt="">
+                                              </div>
+                                              <div class="ml-4">
+                                                  <div class="text-sm font-medium text-gray-900">
+
+                                                  </div>
+                                                  <div class="text-sm text-gray-500">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </td>
+                                      <td class="px-6 py-4">
+                                          <div class="text-sm text-gray-900"> </div>
+                                      </td>
+                                      <td class="px-6 py-4 flex">
+                                          <span class="px-6 py-12 text-right text-sm font-medium flex">
+                                              <button data-id="${post.id}" class="btn bg-red-500 text-white inline-block py-3 px-5 rounded btn-decrease">-</button>
+                                              <div class="px-4 py-4 text-sm text-gray-900 border">  </div>
+                                              <button data-id="${post.id}" class="btn bg-red-500 text-white inline-block py-3 px-5 rounded btn-increase"><a routerLink="">+</a></button>
+                                          </span>
+                                      </td>
+                                      <td class="px-6 py-4">
+                                          <div class="text-sm text-gray-900"></div>
+                                      </td>
+                                      <td class="px-6 py-4">
+                                          <div class="text-sm text-gray-900"></div>
+                                      </td>
+                                  </tr>
+                              <tr class="grid-cols-6">
+                                  <td colspan="4" class="px-6 py-4">
+                                      <div class="text-center uppercase">
+                                          thành tiền:
+                                      </div>
+                                  </td>
+                                  <td class="px-6 py-4">
+                                      <div class="text-center" id="sumPrice">
+
+                                      </div>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
