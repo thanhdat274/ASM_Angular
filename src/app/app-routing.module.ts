@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { AdminCategoryDetailComponent } from './admin/category-admin/admin-category-detail/admin-category-detail.component';
 import { AdminCategoryFormAddComponent } from './admin/category-admin/admin-category-form-add/admin-category-form-add.component';
 import { AdminCategoryFormEditComponent } from './admin/category-admin/admin-category-form-edit/admin-category-form-edit.component';
 import { AdminCategoryListComponent } from './admin/category-admin/admin-category-list/admin-category-list.component';
@@ -66,10 +65,6 @@ const routes: Routes = [
           {
             path: 'edit/:id',
             component: AdminCategoryFormEditComponent
-          },
-          {
-            path: ':id',
-            component: AdminCategoryDetailComponent
           }
         ]
       },

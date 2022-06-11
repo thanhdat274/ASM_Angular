@@ -24,7 +24,6 @@ import { ShowValidateComponent } from './show-validate/show-validate.component';
 import { AdminCategoryListComponent } from './admin/category-admin/admin-category-list/admin-category-list.component';
 import { AdminCategoryFormAddComponent } from './admin/category-admin/admin-category-form-add/admin-category-form-add.component';
 import { AdminCategoryFormEditComponent } from './admin/category-admin/admin-category-form-edit/admin-category-form-edit.component';
-import { AdminCategoryDetailComponent } from './admin/category-admin/admin-category-detail/admin-category-detail.component';
 import { SwiperModule } from 'swiper/angular';
 import { SigninComponent } from './client/auth/signin/signin.component';
 import { SignupComponent } from './client/auth/signup/signup.component';
@@ -52,7 +51,6 @@ import { CartComponent } from './client/cart/cart.component';
     AdminCategoryListComponent,
     AdminCategoryFormAddComponent,
     AdminCategoryFormEditComponent,
-    AdminCategoryDetailComponent,
     SigninComponent,
     SignupComponent,
     ProductClientListComponent,

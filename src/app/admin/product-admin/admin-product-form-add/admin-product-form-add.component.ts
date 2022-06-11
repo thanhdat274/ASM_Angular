@@ -1,7 +1,9 @@
+import { CategoryService } from './../../../services/category/category.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CategoryType } from 'src/app/type/category';
 
 @Component({
   selector: 'app-admin-product-form-add',
@@ -11,9 +13,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AdminProductFormAddComponent implements OnInit {
 
   productForm: FormGroup;
+  category: CategoryType[]
   constructor(
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private categoryService:CategoryService
   ) {
     this.productForm = new FormGroup({
       name: new FormControl('', [
@@ -21,10 +25,13 @@ export class AdminProductFormAddComponent implements OnInit {
         Validators.minLength(6),
         Validators.maxLength(32)
       ]),
-      price: new FormControl(0,[
+      price: new FormControl('',[
         Validators.required
       ]),
-      quantity: new FormControl(0,[
+      sale_price: new FormControl('',[
+        Validators.required
+      ]),
+      quantity: new FormControl('',[
         Validators.required
       ]),
       short_desc: new FormControl('',[
@@ -33,14 +40,18 @@ export class AdminProductFormAddComponent implements OnInit {
       desc: new FormControl('',[
         Validators.required
       ]),
-      img: new FormControl('',[
-        Validators.required
-      ]),
-      // categoryId: new FormControl(0)
+      // img: new FormControl('',[
+      //   Validators.required
+      // ]),
+      categoryId: new FormControl(0)
     })
+    this.category =[]
   }
 
   ngOnInit(): void {
+    this.categoryService.listCate().subscribe(data=>{
+      this.category = data
+    })
   }
 
   onValidateNameProduct(control: AbstractControl): ValidationErrors | null {
