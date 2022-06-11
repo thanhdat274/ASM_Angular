@@ -16,10 +16,11 @@
               <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
                   <div class="shadow sm:rounded-md sm:overflow-hidden">
                       <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
-                          <div class="col-span-6">
+                        <div class="col-span-6">
                               <label class="block text-sm font-medium text-gray-700">Tên danh mục <span class="text-[red]">*</span></label>
                               <select name="" formControlName="categoryId" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md pl-[10px]">
-                                      <option value="${post.id}"></option>
+                                    <option value="0">Vui lòng chọn danh mục</option>
+                                      <option *ngFor="let cate of category" value={{cate._id}}>{{cate.name}}</option>
                               </select>
                           </div>
 
@@ -31,6 +32,10 @@
                           <div class="col-span-6">
                               <label class="block text-sm font-medium text-gray-700">Giá <span class="text-[red]">*</span></label>
                               <input type="number" formControlName="price" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
+                          </div>
+                          <div class="col-span-6">
+                              <label class="block text-sm font-medium text-gray-700">Giá khuyến mại <span class="text-[red]">*</span></label>
+                              <input type="number" formControlName="sale_price" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
                           </div>
                           <div class="col-span-6">
                               <label class="block text-sm font-medium text-gray-700">Số lượng <span class="text-[red]">*</span></label>
