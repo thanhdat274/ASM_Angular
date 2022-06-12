@@ -11,6 +11,10 @@ import { AdminProductFormAddComponent } from './admin/product-admin/admin-produc
 import { AdminProductFormEditComponent } from './admin/product-admin/admin-product-form-edit/admin-product-form-edit.component';
 import { AdminProductListComponent } from './admin/product-admin/admin-product-list/admin-product-list.component';
 import { ProductAdminComponent } from './admin/product-admin/product-admin.component';
+import { AdminUserFormAddComponent } from './admin/user-admin/admin-user-form-add/admin-user-form-add.component';
+import { AdminUserFormEditComponent } from './admin/user-admin/admin-user-form-edit/admin-user-form-edit.component';
+import { AdminUserListComponent } from './admin/user-admin/admin-user-list/admin-user-list.component';
+import { UserAdminComponent } from './admin/user-admin/user-admin.component';
 import { SigninComponent } from './client/auth/signin/signin.component';
 import { SignupComponent } from './client/auth/signup/signup.component';
 import { CartComponent } from './client/cart/cart.component';
@@ -87,6 +91,24 @@ const routes: Routes = [
           {
             path: ':id',
             component: AdminProductDetailComponent
+          }
+        ]
+      },
+      {
+        path: 'user',
+        component: UserAdminComponent,
+        children: [
+          {
+            path: '',
+            component: AdminUserListComponent
+          },
+          {
+            path: 'add',
+            component: AdminUserFormAddComponent
+          },
+          {
+            path: 'edit/:id',
+            component: AdminUserFormEditComponent
           }
         ]
       }

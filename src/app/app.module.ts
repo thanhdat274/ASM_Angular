@@ -30,6 +30,10 @@ import { SignupComponent } from './client/auth/signup/signup.component';
 import { ProductClientListComponent } from './client/product/product-client-list/product-client-list.component';
 import { ProductClientDetailComponent } from './client/product/product-client-detail/product-client-detail.component';
 import { CartComponent } from './client/cart/cart.component';
+import { UserAdminComponent } from './admin/user-admin/user-admin.component';
+import { AdminUserListComponent } from './admin/user-admin/admin-user-list/admin-user-list.component';
+import { AdminUserFormAddComponent } from './admin/user-admin/admin-user-form-add/admin-user-form-add.component';
+import { AdminUserFormEditComponent } from './admin/user-admin/admin-user-form-edit/admin-user-form-edit.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,11 @@ import { CartComponent } from './client/cart/cart.component';
     SignupComponent,
     ProductClientListComponent,
     ProductClientDetailComponent,
-    CartComponent
+    CartComponent,
+    UserAdminComponent,
+    AdminUserListComponent,
+    AdminUserFormAddComponent,
+    AdminUserFormEditComponent
   ],
   imports: [
     BrowserModule,
