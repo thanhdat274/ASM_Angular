@@ -43,9 +43,9 @@ export class AdminProductFormEditComponent implements OnInit {
       desc: new FormControl('',[
         Validators.required
       ]),
-      // img: new FormControl('',[
-      //   Validators.required
-      // ]),
+      img: new FormControl('',[
+        Validators.required
+      ]),
       categoryId: new FormControl(0)
     })
     this.productId = '0';

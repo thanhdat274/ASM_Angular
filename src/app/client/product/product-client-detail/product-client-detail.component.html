@@ -15,22 +15,30 @@
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                 </div>
                 <div class="text-yellow-500 font-semibold">
+                  {{product.name}}
                 </div>
             </div>
             <div class="w-[1080px] h-auto flex justify-between mt-[20px]">
-                <div class="w-[500px] h-[500px] mr-[20px] border">
+                <div class="w-[500px] h-[550px] mr-[20px] border">
                     <div>
-                        <img src="https://picsum.photos/200/300" alt="" class="w-[500px] h-[500px]">
+                        <img src="{{product.img}}" alt="" class="w-[500px] h-[550px]">
                     </div>
                 </div>
                 <div class="w-[460px]">
                     <div class="text-[30px] font-semibold mb-3 w-[460px]">
+                      {{product.name}}
                     </div>
                     <div class="text-[#51545f] mb-[20px] w-[460px]">
                         <h1 class="text-[21px] font-medium">Thông tin chung:</h1>
-                        <div class="font-medium text-[16px] break-words"></div>
+                        <div class="font-medium text-[16px] break-words">{{product.short_desc}}</div>
                     </div>
-                    <div class="text-[#fe4c50] font-semibold text-2xl mb-5">
+                    <div class="flex">
+                      <span class="text-[red] font-semibold text-2xl mr-8">
+                        {{product.sale_price | currency: 'VND'}}
+                      </span>
+                      <span class="text-[gray] font-semibold text-[20px] line-through">
+                        {{product.price | currency: 'VND'}}
+                      </span>
                     </div>
                     <div class="flex">
                         <div class="text-[#1e1e27] mt-1">
@@ -39,14 +47,15 @@
                         <div class="mx-3 border h-[40px] w-[120px] flex justify-around">
                             <input
                                 type="number"
-                                id="inputValue"
-                                value="1"
+                                min="1"
                                 class="w-10 text-center mx-2"
+                                [value]="cartValue"
+                                (input)="onChangeCartValue($event)"
                             >
                         </div>
                     </div>
                     <div class="mt-8">
-                        <button data-id="${data.id}" id="btnAddToCart" class="bg-orange-400 h-10 w-44 rounded-sm text-white">Thêm vào giỏ hàng</button>
+                        <button (click)="onAddToCart()" class="bg-orange-400 h-10 w-44 rounded-sm text-white">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
             </div>
@@ -56,7 +65,7 @@
                 thông tin chi tiết sản phẩm
             </div>
             <div class="w-[1080px] my-[20px]">
-
+              {{product.desc}}
             </div>
         </div>
         <div class="w-[1080px] h-auto mx-auto">

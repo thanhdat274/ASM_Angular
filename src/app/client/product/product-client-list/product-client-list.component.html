@@ -6,7 +6,7 @@
                 <i class="fa fa-angle-left" aria-hidden="true"></i>
             </div>
             <div class="text-yellow-500">
-                <a href="/blog" class="text-yellow-500 font-semibold">Quay lại trang</a>
+                <a routerLink="/" class="text-yellow-500 font-semibold">Quay lại trang</a>
             </div>
             <div class="mx-2 text-[#5d5f6c]">
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -15,95 +15,17 @@
         </div>
         <div class="my-[20px]">
             <div class="grid grid-cols-5 gap-8">
-                <div class="border p-3">
-                    <a routerLink="/sanpham/:id">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
+                <div class="border p-3" *ngFor="let pro of products">
+                    <a routerLink="/sanpham/{{pro._id}}">
+                        <img src="{{pro.img}}" class="w-[250px] h-[300px]">
                     </a>
                     <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
+                        <a routerLink="/" class="font-semibold text-[15px] ">{{pro.name}}</a>
                     </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
-                </div>
-                <div class="border p-3">
-                    <a routerLink="/">
-                        <img src="https://picsum.photos/200/300" class="w-[250px] h-[250px]">
-                    </a>
-                    <h3 class="my-3">
-                        <a routerLink="/" class="font-semibold text-[18px] ">adhihi</a>
-                    </h3>
-                    <p class="text-[red] font-semibold text-[17px]">ahihii</p>
+                    <div class="flex">
+                      <p class="text-[red] font-semibold text-[14px]">{{pro.sale_price | currency: "VND"}}</p>
+                      <p class="text-[gray] font-semibold text-[12px] ml-[20px] line-through">{{pro.price | currency: "VND"}}</p>
+                    </div>
                 </div>
             </div>
         </div>

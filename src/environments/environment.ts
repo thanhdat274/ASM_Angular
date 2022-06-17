@@ -9,7 +9,18 @@ export const environment = {
   products: `${apiUrl}/products`,
   category: `${apiUrl}/category`,
   signin: `${apiUrl}/signin`,
-  user: `${apiUrl}/user`
+  signup: `${apiUrl}/signup`,
+  user: `${apiUrl}/user`,
+  firebaseConfig : {
+    apiKey: "AIzaSyBJwmBQUCQ53gMXh2MTIK4M2H3I68bc7bk",
+    databaseUrl:'https://asm-angular-32b58-default-rtdb.firebaseio.com/',
+    authDomain: "asm-angular-32b58.firebaseapp.com",
+    projectId: "asm-angular-32b58",
+    storageBucket: "asm-angular-32b58.appspot.com",
+    messagingSenderId: "770847226045",
+    appId: "1:770847226045:web:e522d9710c95e49f999fd4",
+    measurementId: "G-5H7YQCY42H"
+  }
 };
 
 /*

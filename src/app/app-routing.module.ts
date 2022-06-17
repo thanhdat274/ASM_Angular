@@ -20,8 +20,10 @@ import { SignupComponent } from './client/auth/signup/signup.component';
 import { CartComponent } from './client/cart/cart.component';
 import { ClientComponent } from './client/client.component';
 import { HomeComponent } from './client/home/home.component';
+import { ProductClientCateListProComponent } from './client/product/product-client-cate-list-pro/product-client-cate-list-pro.component';
 import { ProductClientDetailComponent } from './client/product/product-client-detail/product-client-detail.component';
 import { ProductClientListComponent } from './client/product/product-client-list/product-client-list.component';
+import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
 
 const routes: Routes = [
   {
@@ -41,6 +43,10 @@ const routes: Routes = [
         component: ProductClientDetailComponent
       },
       {
+        path: 'category/:id',
+        component: ProductClientCateListProComponent
+      },
+      {
         path:'cart',
         component: CartComponent
       }
@@ -49,6 +55,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [CanAccessAdminGuard],
     children:[
       {
         path:'',
@@ -116,6 +123,7 @@ const routes: Routes = [
   },
   {
     path: 'auth',
+    component: ClientComponent,
     children:[
       {
         path:'signin',

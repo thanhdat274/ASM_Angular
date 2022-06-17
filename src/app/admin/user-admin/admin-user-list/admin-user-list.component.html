@@ -47,9 +47,9 @@
                               </tr>
                           </thead>
                           <tbody class="bg-white divide-y divide-gray-200">
-                              <tr *ngFor="let item of user">
+                              <tr *ngFor="let item of user; index as i">
                                   <td class="px-9 py-4 whitespace text-sm text-gray-500">
-
+                                    {{i +1}}
                                   </td>
                                   <td class="px-6 py-4 whitespace">
                                       <div class="flex items-center">
@@ -71,7 +71,7 @@
                                         Admin
                                       </div>
                                       <div class="flex items-center"  *ngIf="item.role === 0">
-                                        Nhân viên
+                                        Khách Hàng
                                       </div>
                                   </td>
                                   <td class="px-6 py-4 whitespace-nowrap">

@@ -9,6 +9,7 @@
               <div class="mt-4">
                   <label class="block" for="email">Địa chỉ email <span class="text-red-500">*</span></label>
                   <input type="text" name="email" formControlName="email" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                  <app-show-validate [field]="signin.get('email')"></app-show-validate>
               </div>
               <div class="mt-4">
                   <label class="block">Mật khẩu <span class="text-red-500">*</span></label>

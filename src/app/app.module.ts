@@ -1,3 +1,4 @@
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -34,6 +35,10 @@ import { UserAdminComponent } from './admin/user-admin/user-admin.component';
 import { AdminUserListComponent } from './admin/user-admin/admin-user-list/admin-user-list.component';
 import { AdminUserFormAddComponent } from './admin/user-admin/admin-user-form-add/admin-user-form-add.component';
 import { AdminUserFormEditComponent } from './admin/user-admin/admin-user-form-edit/admin-user-form-edit.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ProductClientCateListProComponent } from './client/product/product-client-cate-list-pro/product-client-cate-list-pro.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -63,7 +68,8 @@ import { AdminUserFormEditComponent } from './admin/user-admin/admin-user-form-e
     UserAdminComponent,
     AdminUserListComponent,
     AdminUserFormAddComponent,
-    AdminUserFormEditComponent
+    AdminUserFormEditComponent,
+    ProductClientCateListProComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +78,10 @@ import { AdminUserFormEditComponent } from './admin/user-admin/admin-user-form-e
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SwiperModule
+    SwiperModule,
+    ToastrModule.forRoot(),
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,6 +17,9 @@ export class AuthService {
   login(data: Auth):Observable<LoginResponse>{
     return this.http.post<LoginResponse>(`${environment.signin}`, data)
   }
+  signUp(data: Auth):Observable<UserType>{
+    return this.http.post<UserType>(`${environment.signup}`, data)
+  }
 
 
   listUser(): Observable<UserType[]>{

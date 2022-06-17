@@ -33,6 +33,7 @@
                     <li class="mx-4">
                         <a routerLink="/auth/signin">Đăng nhập</a>
                     </li>
+                    <!-- <li *ngIf="loggedInUser.role === 'admin'"><a class="dropdown-item" [routerLink]="'/admin'">Dashboard</a></li> -->
                 </ul>
             </div>
         </div>
@@ -86,7 +87,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li *ngFor="let cate of category">
-                                <a routerLink="/sanpham/{{cate._id}}">
+                                <a routerLink="/category/{{cate._id}}">
                                     <i class="fa-solid fa-books"></i>
                                     {{cate.name}}
                                 </a>

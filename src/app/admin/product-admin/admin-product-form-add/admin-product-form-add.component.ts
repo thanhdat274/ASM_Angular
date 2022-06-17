@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CategoryType } from 'src/app/type/category';
+import { UploadService } from 'src/app/services/upload/upload.service';
 
 @Component({
   selector: 'app-admin-product-form-add',
@@ -13,17 +14,19 @@ import { CategoryType } from 'src/app/type/category';
 export class AdminProductFormAddComponent implements OnInit {
 
   productForm: FormGroup;
-  category: CategoryType[]
+  category: CategoryType[];
+  file: any
   constructor(
     private productService: ProductService,
     private router: Router,
-    private categoryService:CategoryService
+    private categoryService:CategoryService,
+    private uploadImg: UploadService,
   ) {
     this.productForm = new FormGroup({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(32)
+        Validators.maxLength(100)
       ]),
       price: new FormControl('',[
         Validators.required
@@ -40,9 +43,9 @@ export class AdminProductFormAddComponent implements OnInit {
       desc: new FormControl('',[
         Validators.required
       ]),
-      // img: new FormControl('',[
-      //   Validators.required
-      // ]),
+      img: new FormControl('',[
+        Validators.required
+      ]),
       categoryId: new FormControl(0)
     })
     this.category =[]
@@ -53,7 +56,6 @@ export class AdminProductFormAddComponent implements OnInit {
       this.category = data
     })
   }
-
   onValidateNameProduct(control: AbstractControl): ValidationErrors | null {
     const { value } = control;
     if (!value.includes('product')) {
@@ -62,8 +64,6 @@ export class AdminProductFormAddComponent implements OnInit {
     return null;
   }
   onSubmit() {
-
-    // console.log(this.productForm.value);
     const submitData = this.productForm.value;
     return this.productService.addProducts(submitData).subscribe(data => {
       this.router.navigateByUrl('/admin/products')

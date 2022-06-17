@@ -59,6 +59,11 @@
                               <app-show-validate [field]="productForm.get('desc')"></app-show-validate>
                           </div>
                           <div>
+                              <label class="block text-sm font-medium text-gray-700">HÌnh ảnh <span class="text-[red]">*</span></label>
+                              <input type="text" formControlName="img" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
+                              <app-show-validate [field]="productForm.get('img')"></app-show-validate>
+                          </div>
+                          <!-- <div>
                               <label class="block text-sm font-medium text-gray-700">
                                 Hình ảnh
                                 <span class="text-[red]">*</span>
@@ -74,7 +79,7 @@
                                       <div class="flex text-sm text-gray-600">
                                       <label class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                           <span>Upload a file</span>
-                                          <input formControlName="file-upload" name="file-upload" type="file" class="sr-only">
+                                          <input formControlName="img" (change)="saveFileThumail($event)" name="file-upload" type="file" class="sr-only">
                                       </label>
                                       <p class="pl-1">or drag and drop</p>
                                       </div>
@@ -84,7 +89,7 @@
                                   </div>
                               </div>
 
-                          </div>
+                          </div> -->
                       </div>
                       <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                           <a routerLink="/admin/products" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Hủy</a>
