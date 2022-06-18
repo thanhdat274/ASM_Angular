@@ -13,7 +13,7 @@
   <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
       <div class="md:grid md:grid-cols-3 md:gap-6 ">
           <div class="mt-5 md:mt-0 md:col-span-3 border">
-              <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+              <form [formGroup]="productForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                   <div class="shadow sm:rounded-md sm:overflow-hidden">
                       <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                           <div class="col-span-6">
@@ -59,9 +59,7 @@
                               <app-show-validate [field]="productForm.get('desc')"></app-show-validate>
                           </div>
                           <div>
-                              <label class="block text-sm font-medium text-gray-700">HÌnh ảnh <span class="text-[red]">*</span></label>
-                              <input type="text" formControlName="img" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
-                              <app-show-validate [field]="productForm.get('img')"></app-show-validate>
+                            <input type="file" formControlName="img"  (change)="upload($event)">
                           </div>
                           <!-- <div>
                               <label class="block text-sm font-medium text-gray-700">
@@ -79,7 +77,7 @@
                                       <div class="flex text-sm text-gray-600">
                                       <label class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                           <span>Upload a file</span>
-                                          <input formControlName="img" (change)="saveFileThumail($event)" name="file-upload" type="file" class="sr-only">
+                                          <input type="file" formControlName="img"  (change)="uploadFile($event)"  class="sr-only">
                                       </label>
                                       <p class="pl-1">or drag and drop</p>
                                       </div>
@@ -88,7 +86,6 @@
                                       </p>
                                   </div>
                               </div>
-
                           </div> -->
                       </div>
                       <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
