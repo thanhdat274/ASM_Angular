@@ -1,5 +1,5 @@
 <main class="mt-[10px]">
-    <!-- <Banner /> -->
+    <app-banner></app-banner>
     <div class="max-w-[1440px] mx-auto">
         <div class="my-[20px]">
             <h2 class="font-semibold text-2xl uppercase my-[30px] text-center">Tất cả Sản phẩm</h2>
@@ -12,8 +12,8 @@
                         <a routerLink="/" class="font-semibold text-[15px] ">{{pro.name}}</a>
                     </h3>
                     <div class="flex">
-                      <span class="text-[red] font-semibold text-[14px]">{{pro.sale_price | currency: "VND"}}</span>
-                      <span class="text-[gray] font-semibold text-[12px] ml-[20px] line-through">{{pro.price | currency: "VND"}}</span>
+                      <span class="text-[red] font-semibold text-[14px]">{{pro.sale_price.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}</span>
+                      <span class="text-[gray] font-semibold text-[12px] ml-[20px] line-through">{{pro.price.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}</span>
                     </div>
                 </div>
             </div>

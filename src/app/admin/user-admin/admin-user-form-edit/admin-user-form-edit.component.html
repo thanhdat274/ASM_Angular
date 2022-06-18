@@ -3,7 +3,7 @@
       <div class="lg:flex lg:items-center lg:justify-between">
           <div class="flex-1 min-w-0">
               <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-2xl sm:truncate uppercase">
-                  thêm mới tài khoản
+                  cập nhật tài khoản
               </h2>
           </div>
       </div>
@@ -13,7 +13,7 @@
   <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
       <div class="md:grid md:grid-cols-3 md:gap-6 ">
           <div class="mt-5 md:mt-0 md:col-span-3 border">
-              <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+              <form [formGroup]="userForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                   <div class="shadow sm:rounded-md sm:overflow-hidden">
                       <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                           <div class="col-span-6">
@@ -28,8 +28,7 @@
                           </div>
                           <div class="col-span-6">
                               <label class="block text-sm font-medium text-gray-700">Mật khẩu <span class="text-[red]">*</span></label>
-                              <input type="text" formControlName="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
-                              <app-show-validate [field]="userForm.get('password')"></app-show-validate>
+                              <input type="text" readonly formControlName="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
                           </div>
                           <div class="col-span-6">
                               <label class="block text-sm font-medium text-gray-700">Số điện thoại <span class="text-[red]">*</span></label>
@@ -52,6 +51,9 @@
                               <label class="block text-sm font-medium text-gray-700">
                               Hình ảnh <span class="text-[red]">*</span>
                               </label>
+                              <div *ngIf="img">
+                                <img [src]="img" class="w-[240px] h-[140px]"/>
+                              </div>
                               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                   <div class="space-y-1 text-center">
                                       <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
@@ -63,7 +65,7 @@
                                       <div class="flex text-sm text-gray-600">
                                       <label class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                           <span>Upload a file</span>
-                                          <input formControlName="file-upload" name="file-upload" type="file" class="sr-only">
+                                          <input type="file" formControlName="img"  (change)="upload($event)"  class="sr-only">
                                       </label>
                                       <p class="pl-1">or drag and drop</p>
                                       </div>

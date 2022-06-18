@@ -1,16 +1,16 @@
 <main class="my-[20px]">
-    <div class="w-[1280px] py-[10px] flex border-b-2 border-[#f2f2f2] mx-auto">
-        <div class="">
-            <a routerLink="/" class="font-semibold">Trang chủ</a>
+    <div class="w-[1440px] py-[10px] flex border-b-2 border-[#f2f2f2] mx-auto">
+        <div class="text-yellow-500">
+            <a routerLink="/" class="font-semibold hover:text-yellow-500">Trang chủ</a>
         </div>
         <div class="mx-2 text-[#5d5f6c]">
             <i class="fa fa-angle-right" aria-hidden="true"></i>
         </div>
-        <div class="font-semibold">
+        <div class="font-semibold text-yellow-500">
             Giỏ hàng
         </div>
     </div>
-    <div class="w-[1280px] mx-auto">
+    <div class="w-[1440px] mx-auto">
         <div class="my-[20px]">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
                 Giỏ hàng của bạn
@@ -18,7 +18,7 @@
         </div>
         <div class="flex flex-col">
             <div class="my-2">
-                <div class="py-2 align-middle inline-block w-[1280px]">
+                <div class="py-2 align-middle inline-block w-[1440px]">
                     <div class="shadow overflow-hidden border-b border-gray-200">
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
@@ -75,13 +75,12 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="text-sm text-gray-900">
-                                          {{item.sale_price | currency: 'VND'}}
+                                          {{item.sale_price.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}
                                         </div>
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="text-sm text-gray-900">
-                                          <!-- {{price | currency: 'VND' }} -->
-                                          {{item.sale_price * item.value | currency: 'VND'}}
+                                          {{(item.sale_price * item.value).toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}
                                         </div>
                                     </td>
                                 </tr>
@@ -93,8 +92,7 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="text-center" id="sumPrice">
-                                          <!-- {{cartItemValues | currency:"VND"}} -->
-                                         {{cartItemValues | currency:"VND"}}
+                                         {{cartItemValues.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}
                                         </div>
                                     </td>
                                 </tr>
@@ -103,6 +101,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="text-right">
+          <button class="w-[200px] h-[50px] bg-red-500 text-white">Đặt hàng</button>
         </div>
     </div>
 </main>

@@ -41,6 +41,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BannerComponent } from './client/layouts/banner/banner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminUserListComponent,
     AdminUserFormAddComponent,
     AdminUserFormEditComponent,
-    ProductClientCateListProComponent
+    ProductClientCateListProComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule,

@@ -32,7 +32,7 @@ export class AdminProductFormEditComponent implements OnInit {
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(32)
+        Validators.maxLength(1000)
       ]),
       price: new FormControl('', [
         Validators.required
@@ -69,7 +69,7 @@ export class AdminProductFormEditComponent implements OnInit {
           categoryId: data.categoryId,
           name: data.name,
           price: data.price,
-          sale_price: data.price,
+          sale_price: data.sale_price,
           quantity: data.quantity,
           short_desc: data.short_desc,
           desc: data.desc,
@@ -92,7 +92,7 @@ export class AdminProductFormEditComponent implements OnInit {
           categoryId: this.productForm.value.categoryId,
           name: this.productForm.value.name,
           price: this.productForm.value.price,
-          sale_price: this.productForm.value.price,
+          sale_price: this.productForm.value.sale_price,
           quantity: this.productForm.value.quantity,
           short_desc: this.productForm.value.short_desc,
           img: data.url,

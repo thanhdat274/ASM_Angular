@@ -19,9 +19,9 @@
                 </div>
             </div>
             <div class="w-[1080px] h-auto flex justify-between mt-[20px]">
-                <div class="w-[500px] h-[550px] mr-[20px] border">
+                <div class="w-[500px] h-[600px] mr-[20px] border">
                     <div>
-                        <img src="{{product.img}}" alt="" class="w-[500px] h-[550px]">
+                        <img src="{{product.img}}" alt="" class="w-[500px] h-[600px]">
                     </div>
                 </div>
                 <div class="w-[460px]">
@@ -29,15 +29,18 @@
                       {{product.name}}
                     </div>
                     <div class="text-[#51545f] mb-[20px] w-[460px]">
-                        <h1 class="text-[21px] font-medium">Thông tin chung:</h1>
+                        <h1 class="text-[21px] font-medium">Thông tin chung:</h1><br>
                         <div class="font-medium text-[16px] break-words">{{product.short_desc}}</div>
                     </div>
                     <div class="flex">
                       <span class="text-[red] font-semibold text-2xl mr-8">
-                        {{product.sale_price | currency: 'VND'}}
+                        {{product.sale_price.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}
                       </span>
-                      <span class="text-[gray] font-semibold text-[20px] line-through">
-                        {{product.price | currency: 'VND'}}
+                      <span class="text-[gray] font-semibold text-[20px] line-through mr-8">
+                        {{product.price.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}
+                      </span>
+                      <span class="text-[gray] font-semibold text-[16px]">
+                        (Bạn đã tiết kiệm được {{(product.price - product.sale_price).toLocaleString("vi-VN", { style: "currency", currency: "VND" })}})
                       </span>
                     </div>
                     <div class="flex">

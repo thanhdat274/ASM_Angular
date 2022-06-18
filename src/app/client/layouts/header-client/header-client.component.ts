@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class HeaderClientComponent implements OnInit {
   category: CategoryType[];
   userLogin: any
+  cartValue: any
   constructor(
     private categoryService: CategoryService,
     private router: Router,
@@ -19,6 +20,7 @@ export class HeaderClientComponent implements OnInit {
   ) {
     this.category = [];
     this.userLogin = JSON.parse(localStorage.getItem('loggedInUser')!);
+    this.cartValue = JSON.parse(localStorage.getItem('cart')!);
     console.log(' this.userLogin', this.userLogin);
 
   }

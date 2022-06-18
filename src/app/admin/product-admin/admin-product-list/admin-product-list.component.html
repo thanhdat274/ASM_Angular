@@ -69,17 +69,17 @@
                                   </td>
                                   <td class="px-4 py-4 whitespace">
                                       <div class="flex items-center">
-                                        {{product.price}}
+                                        {{product.price.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}
                                       </div>
                                   </td>
                                   <td class="px-4 py-4 whitespace">
                                       <div class="flex items-center">
-                                        {{product.sale_price}}
+                                        {{product.sale_price.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}}
                                       </div>
                                   </td>
                                   <td class="px-4 py-4 whitespace">
                                       <div class="flex items-center">
-                                        {{product.quantity}}
+                                        {{product.quantity.toLocaleString("it-IT")}}
                                       </div>
                                   </td>
                                   <td class="py-4 whitespace">

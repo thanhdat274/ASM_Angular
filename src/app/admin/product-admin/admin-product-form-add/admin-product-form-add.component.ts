@@ -76,7 +76,7 @@ export class AdminProductFormAddComponent implements OnInit {
           categoryId: this.productForm.value.categoryId,
           name: this.productForm.value.name,
           price: this.productForm.value.price,
-          sale_price: this.productForm.value.price,
+          sale_price: this.productForm.value.sale_price,
           quantity: this.productForm.value.quantity,
           short_desc: this.productForm.value.short_desc,
           img: data.url,
@@ -85,7 +85,7 @@ export class AdminProductFormAddComponent implements OnInit {
         }
         console.log(this.productData);
         this.productService.addProducts(this.productData).subscribe(data => {
-          this.toastr.success("Cập nhật thành công. Chuyển trang sau 2s")
+          this.toastr.success("Thêm mới thành công. Chuyển trang sau 2s")
           setTimeout(() => {
             this.router.navigateByUrl('/admin/products')
           }, 2000);

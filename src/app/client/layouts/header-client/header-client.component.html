@@ -37,7 +37,7 @@
                 </ul>
                 <ul class="flex" *ngIf="userLogin &&userLogin!==null ">
                   <li class="mx-4">
-                      <a routerLink="/auth/signup">{{userLogin?.user?.email}}</a>
+                      <a routerLink="/">{{userLogin?.user?.email}}</a>
                   </li>
                   <li class="mx-4 text-[#f1aa0c]">
                       <a routerLink="#">|</a>
@@ -46,7 +46,7 @@
                       <button (click)="logout()" >Logout</button>
                   </li>
                   <li class="mx-4" *ngIf="userLogin && userLogin?.user?.role =='1'">
-                    <button>Dashboard</button>
+                    <a routerLink="/admin">Dashboard</a>
                 </li>
                   <!-- <li *ngIf="loggedInUser.role === 'admin'"><a class="dropdown-item" [routerLink]="'/admin'">Dashboard</a></li> -->
               </ul>
@@ -81,7 +81,7 @@
                 <a routerLink="/cart" class="flex hover:text-gray-100">
                     <i class="fas fa-shopping-cart text-[35px] mr-[10px]"></i>
                     <p class="text-[20px]">Cart</p>
-                    <div class="shopee-cart-number-badge"></div>
+                    <div class="shopee-cart-number-badge">{{cartValue.length}}</div>
                 </a>
             </div>
         </div>
@@ -96,11 +96,17 @@
                         <a routerLink="" class="menu-item">Trang chủ</a>
                     </li>
                     <li>
-                        <a routerLink="/sanpham" class="menu-item">
+                        <div class="menu-item">
                             <i class="fa-solid fa-list-dropdown"></i>
                             Danh mục sản phẩm
-                        </a>
+                        </div>
                         <ul class="sub-menu">
+                          <li>
+                            <a routerLink="/sanpham">
+                                <i class="fa-solid fa-list-dropdown"></i>
+                                Tất cả sản phẩm
+                            </a>
+                          </li>
                             <li *ngFor="let cate of category">
                                 <a routerLink="/category/{{cate._id}}">
                                     <i class="fa-solid fa-books"></i>
