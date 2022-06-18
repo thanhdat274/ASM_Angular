@@ -31,4 +31,8 @@ export class LocalStorageService {
     localStorage.setItem('cart', JSON.stringify(cartItems));
     this.storageSubject.next('');
   }
+  setCart(cartData: any) {
+    localStorage.setItem('cart', JSON.stringify(cartData));
+    this.storageSubject.next('');
+  }
 }
