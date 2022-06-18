@@ -38,6 +38,7 @@ export class CartComponent implements OnInit {
     }
   }
   onTangSl(_id: string){
+    console.log(_id);
     const existItem = this.cartItems.find((item: any) => item._id === _id);
     console.log(existItem);
     if (existItem) {
@@ -48,7 +49,6 @@ export class CartComponent implements OnInit {
   }
 
   onGiamSl(_id: string){
-    console.log(_id);
     console.log(_id);
     const existItem = this.cartItems.find((item: any) => item._id === _id);
     console.log(existItem);

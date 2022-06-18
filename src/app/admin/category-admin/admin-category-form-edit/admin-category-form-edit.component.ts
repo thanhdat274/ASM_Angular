@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from './../../../services/category/category.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -16,9 +17,10 @@ export class AdminCategoryFormEditComponent implements OnInit {
     private categoryService: CategoryService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private toastr: ToastrService
   ) {
-    this.cateForm =new FormGroup({
-      name: new FormControl('',[
+    this.cateForm = new FormGroup({
+      name: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(32)
@@ -38,10 +40,14 @@ export class AdminCategoryFormEditComponent implements OnInit {
     }
   }
 
-  onSubmit(){
+  onSubmit() {
     const submitData = this.cateForm.value;
-    return this.categoryService.updateCate(this.cateId,submitData).subscribe(data => {
-      this.router.navigateByUrl('/admin/category')
+    return this.categoryService.updateCate(this.cateId, submitData).subscribe(data => {
+      this.toastr.success("Cập nhật thành công. Chuyển trang sau 2s")
+      setTimeout(() => {
+        this.router.navigateByUrl('/admin/category')
+      }, 2000);
+
     })
   }
 

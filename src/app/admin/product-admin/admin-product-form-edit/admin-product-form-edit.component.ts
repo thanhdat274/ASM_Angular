@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from './../../../services/category/category.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
@@ -23,8 +24,9 @@ export class AdminProductFormEditComponent implements OnInit {
     private productService: ProductService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private categoryService:CategoryService,
-    private http: HttpClient
+    private categoryService: CategoryService,
+    private http: HttpClient,
+    private toastr: ToastrService
   ) {
     this.productForm = new FormGroup({
       name: new FormControl('', [
@@ -32,31 +34,31 @@ export class AdminProductFormEditComponent implements OnInit {
         Validators.minLength(6),
         Validators.maxLength(32)
       ]),
-      price: new FormControl('',[
+      price: new FormControl('', [
         Validators.required
       ]),
-      sale_price: new FormControl('',[
+      sale_price: new FormControl('', [
         Validators.required
       ]),
-      quantity: new FormControl('',[
+      quantity: new FormControl('', [
         Validators.required
       ]),
-      short_desc: new FormControl('',[
+      short_desc: new FormControl('', [
         Validators.required
       ]),
-      desc: new FormControl('',[
+      desc: new FormControl('', [
         Validators.required
       ]),
       img: new FormControl(''),
       categoryId: new FormControl(0)
     })
     this.productId = '0';
-    this.category =[];
-    this.img=''
+    this.category = [];
+    this.img = ''
   }
 
   ngOnInit(): void {
-    this.categoryService.listCate().subscribe(data=>{
+    this.categoryService.listCate().subscribe(data => {
       this.category = data
     })
     this.productId = this.activatedRoute.snapshot.params['id'];
@@ -98,8 +100,11 @@ export class AdminProductFormEditComponent implements OnInit {
         }
         console.log(this.productData);
         this.productService.updateProduct(this.productId, this.productData).subscribe(data => {
-          this.img= this.productData.img;
-          this.router.navigateByUrl('/admin/products')
+          this.img = this.productData.img;
+          this.toastr.success("Cập nhật thành công. Chuyển trang sau 2s")
+          setTimeout(() => {
+            this.router.navigateByUrl('/admin/products')
+          }, 2000);
         })
       })
     }

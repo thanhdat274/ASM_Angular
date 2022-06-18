@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { UserType } from 'src/app/type/auth';
 import { AuthService } from '../../../services/auth/auth.service';
@@ -10,7 +11,8 @@ import { AuthService } from '../../../services/auth/auth.service';
 export class AdminUserListComponent implements OnInit {
   user: UserType[];
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private toastr:ToastrService
   ) {
     this.user =[]
    }
@@ -24,6 +26,7 @@ export class AdminUserListComponent implements OnInit {
     const confirmDelete = confirm('Bạn chắc chắn muốn xóa không!');
     if(confirmDelete && _id){
       this.authService.deleteUser(_id).subscribe((data)=>{
+        this.toastr.success("Bạn đã xóa thành công")
         console.log(data);
         this.ngOnInit()
       })

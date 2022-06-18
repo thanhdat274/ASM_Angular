@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,7 +13,8 @@ export class SigninComponent implements OnInit {
   signin: FormGroup;
   constructor(
     private authService:AuthService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.signin = new FormGroup({
       email: new FormControl('', Validators.email),
@@ -26,7 +28,10 @@ export class SigninComponent implements OnInit {
   onSubmit(){
     this.authService.login(this.signin.value).subscribe(data => {
       localStorage.setItem('loggedInUser', JSON.stringify(data));
-      this.router.navigateByUrl('/');
+      this.toastr.success("Đăng nhập thành công. Chuyển trang sau 2s")
+      setTimeout(() => {
+        this.router.navigateByUrl('/')
+      }, 2000);
     });
   }
 }

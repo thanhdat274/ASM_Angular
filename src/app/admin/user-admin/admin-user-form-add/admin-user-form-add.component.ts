@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth/auth.service';
@@ -12,7 +13,8 @@ export class AdminUserFormAddComponent implements OnInit {
   userForm: FormGroup;
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastr:ToastrService
   ) {
     this.userForm = new FormGroup({
       name: new FormControl('', [
@@ -49,7 +51,10 @@ export class AdminUserFormAddComponent implements OnInit {
   onSubmit() {
     const submitData = this.userForm.value;
     return this.authService.addUser(submitData).subscribe(data => {
-      this.router.navigateByUrl('/admin/user')
+      this.toastr.success("Thêm mới thành công. Chuyển trang sau 2s")
+      setTimeout(() => {
+        this.router.navigateByUrl('/admin/user')
+      }, 2000);
     })
   }
 }

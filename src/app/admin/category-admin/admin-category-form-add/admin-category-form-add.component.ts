@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../../services/category/category.service';
@@ -12,7 +13,8 @@ export class AdminCategoryFormAddComponent implements OnInit {
   cateForm: FormGroup;
   constructor(
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.cateForm =new FormGroup({
       name: new FormControl('',[
@@ -29,7 +31,10 @@ export class AdminCategoryFormAddComponent implements OnInit {
   onSubmit(){
     const submitData = this.cateForm.value;
     return this.categoryService.addCate(submitData).subscribe(data => {
-      this.router.navigateByUrl('/admin/category')
+      this.toastr.success("Thêm mới thành công. Chuyển trang sau 2s")
+      setTimeout(() => {
+        this.router.navigateByUrl('/admin/category')
+      }, 2000);
     })
   }
 

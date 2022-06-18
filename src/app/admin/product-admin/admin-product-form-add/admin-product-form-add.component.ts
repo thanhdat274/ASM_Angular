@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from './../../../services/category/category.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { Component, OnInit } from '@angular/core';
@@ -23,7 +24,8 @@ export class AdminProductFormAddComponent implements OnInit {
     private router: Router,
     private categoryService: CategoryService,
     private uploadImg: UploadService,
-    private http: HttpClient
+    private http: HttpClient,
+    private toastr: ToastrService
   ) {
     this.productForm = new FormGroup({
       name: new FormControl('', [
@@ -83,7 +85,10 @@ export class AdminProductFormAddComponent implements OnInit {
         }
         console.log(this.productData);
         this.productService.addProducts(this.productData).subscribe(data => {
-          this.router.navigateByUrl('/admin/products')
+          this.toastr.success("Cập nhật thành công. Chuyển trang sau 2s")
+          setTimeout(() => {
+            this.router.navigateByUrl('/admin/products')
+          }, 2000);
         })
       })
     }

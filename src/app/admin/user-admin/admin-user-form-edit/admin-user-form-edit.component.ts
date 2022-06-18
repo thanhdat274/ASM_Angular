@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -14,7 +15,8 @@ export class AdminUserFormEditComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private activatedRoute:ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private toastr: ToastrService
   ) {
     this.userForm = new FormGroup({
       name: new FormControl('', [
@@ -22,22 +24,22 @@ export class AdminUserFormEditComponent implements OnInit {
         Validators.minLength(6),
         Validators.maxLength(32)
       ]),
-      email:new FormControl('', [
+      email: new FormControl('', [
         Validators.required
       ]),
-      password:new FormControl('', [
+      password: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(16)
       ]),
-      phone:new FormControl('', [
+      phone: new FormControl('', [
         Validators.required,
         Validators.maxLength(10)
       ]),
-      address:new FormControl('', [
+      address: new FormControl('', [
         Validators.required,
       ]),
-      img:new FormControl('', [
+      img: new FormControl('', [
         Validators.required,
       ]),
       role: new FormControl('')
@@ -65,7 +67,10 @@ export class AdminUserFormEditComponent implements OnInit {
   onSubmit() {
     const submitData = this.userForm.value;
     return this.authService.updateUser(this.userId, submitData).subscribe(data => {
-      this.router.navigateByUrl('/admin/user')
+      this.toastr.success("Cập nhật thành công. Chuyển trang sau 2s")
+      setTimeout(() => {
+        this.router.navigateByUrl('/admin/user')
+      }, 2000);
     })
   }
 }

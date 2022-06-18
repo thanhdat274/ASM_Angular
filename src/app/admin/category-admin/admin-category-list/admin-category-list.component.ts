@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { CategoryType } from 'src/app/type/category';
 import { CategoryService } from '../../../services/category/category.service';
@@ -9,7 +10,11 @@ import { CategoryService } from '../../../services/category/category.service';
 })
 export class AdminCategoryListComponent implements OnInit {
   category: CategoryType[]
-  constructor(private categoryService: CategoryService) {
+  constructor(
+    private categoryService: CategoryService,
+    private toastr: ToastrService
+
+    ) {
     this.category=[]
    }
 
@@ -23,7 +28,7 @@ export class AdminCategoryListComponent implements OnInit {
     const confirmDelete = confirm('Bạn chắc chắn muốn xóa không!');
     if(confirmDelete && _id){
       this.categoryService.deleteCate(_id).subscribe((data)=>{
-        console.log(data);
+        this.toastr.success('Bạn đã xóa thành công');
         this.ngOnInit()
       })
     }
