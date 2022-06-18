@@ -139,6 +139,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[CanAccessAdminGuard]
 })
 export class AppRoutingModule { }
+//trst đi okiii

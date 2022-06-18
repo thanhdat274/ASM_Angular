@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 mx-auto">
-                <ul class="flex">
+                <ul class="flex" *ngIf="!userLogin">
                     <li class="mx-4">
                         <a routerLink="/auth/signup">Đăng ký</a>
                     </li>
@@ -33,8 +33,23 @@
                     <li class="mx-4">
                         <a routerLink="/auth/signin">Đăng nhập</a>
                     </li>
-                    <!-- <li *ngIf="loggedInUser.role === 'admin'"><a class="dropdown-item" [routerLink]="'/admin'">Dashboard</a></li> -->
+
                 </ul>
+                <ul class="flex" *ngIf="userLogin &&userLogin!==null ">
+                  <li class="mx-4">
+                      <a routerLink="/auth/signup">{{userLogin?.user?.email}}</a>
+                  </li>
+                  <li class="mx-4 text-[#f1aa0c]">
+                      <a routerLink="#">|</a>
+                  </li>
+                  <li class="mx-4">
+                      <button (click)="logout()" >Logout</button>
+                  </li>
+                  <li class="mx-4" *ngIf="userLogin && userLogin?.user?.role =='1'">
+                    <button>Dashboard</button>
+                </li>
+                  <!-- <li *ngIf="loggedInUser.role === 'admin'"><a class="dropdown-item" [routerLink]="'/admin'">Dashboard</a></li> -->
+              </ul>
             </div>
         </div>
     </div>

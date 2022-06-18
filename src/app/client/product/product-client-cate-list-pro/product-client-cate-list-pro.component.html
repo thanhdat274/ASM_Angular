@@ -11,20 +11,22 @@
           <div class="mx-2 text-[#5d5f6c]">
               <i class="fa fa-angle-right" aria-hidden="true"></i>
           </div>
-          <div class="text-yellow-500 font-semibold"></div>
+          <div class="text-yellow-500 font-semibold">
+            {{cateName}}
+          </div>
       </div>
       <div class="my-[20px]">
           <div class="grid grid-cols-5 gap-8">
-              <div class="border p-3" *ngFor="let pro of products">
-                  <a routerLink="/sanpham/:id">
-                      <img src="{{pro.img}}" class="w-[250px] h-[250px]">
+              <div class="border p-3" *ngFor="let pro of productsByCate">
+                  <a routerLink="/sanpham/{{pro._id}}">
+                      <img src="{{pro?.img}}" class="w-[250px] h-[250px]">
                   </a>
                   <h3 class="my-3">
-                      <a routerLink="/" class="font-semibold text-[15px] ">{{pro.name}}</a>
+                      <a routerLink="/" class="font-semibold text-[15px] ">{{pro?.name}}</a>
                   </h3>
                   <div class="flex">
-                    <p class="text-[red] font-semibold text-[14px]">{{pro.price | currency: "VND"}}</p>
-                    <p class="text-[gray] font-semibold text-[12px] ml-[20px] line-through">{{pro.sale_price | currency: "VND"}}</p>
+                    <p class="text-[red] font-semibold text-[14px]">{{pro?.price | currency: "VND"}}</p>
+                    <p class="text-[gray] font-semibold text-[12px] ml-[20px] line-through">{{pro?.sale_price | currency: "VND"}}</p>
                   </div>
               </div>
           </div>

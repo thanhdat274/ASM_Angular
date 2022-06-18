@@ -52,39 +52,39 @@
                                   </th>
                               </tr>
                           </thead>
-                          <tbody class="bg-white divide-y divide-gray-200">
+                          <tbody class="bg-white divide-y divide-gray-200 text-[14px]">
                               <tr *ngFor="let product of products; index as i">
                                   <td class="px-9 py-4 whitespace text-sm text-gray-500">
                                     {{i +1}}
                                   </td>
-                                  <td class="px-6 py-4 whitespace">
+                                  <td class="px-4 py-4 whitespace">
                                       <div class="flex items-center">
                                         {{product.name}}
                                       </div>
                                   </td>
-                                  <td class="px-6 py-4 whitespace w-[200px]">
+                                  <td class="px-4 py-4 whitespace w-[200px]">
                                       <div class="flex items-center ">
                                           <img src="{{product.img}}" alt="" class="w-full">
                                       </div>
                                   </td>
-                                  <td class="px-6 py-4 whitespace">
+                                  <td class="px-4 py-4 whitespace">
                                       <div class="flex items-center">
                                         {{product.price}}
                                       </div>
                                   </td>
-                                  <td class="px-6 py-4 whitespace">
+                                  <td class="px-4 py-4 whitespace">
                                       <div class="flex items-center">
                                         {{product.sale_price}}
                                       </div>
                                   </td>
-                                  <td class="px-6 py-4 whitespace">
+                                  <td class="px-4 py-4 whitespace">
                                       <div class="flex items-center">
                                         {{product.quantity}}
                                       </div>
                                   </td>
-                                  <td class="px-6 py-4 whitespace">
+                                  <td class="py-4 whitespace">
                                       <div class="flex items-center">
-                                          <textarea  rows="10" cols="100" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md">  {{product.desc}}</textarea>
+                                          <textarea  rows="10" cols="100" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-[200px] sm:text-sm border border-gray-300 rounded-md">  {{product.desc}}</textarea>
                                       </div>
                                   </td>
                                   <td class="px-6 py-4 whitespace-nowrap">

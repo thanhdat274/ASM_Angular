@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,6 +37,14 @@
   }
 }
 
+@import '~ngx-toastr/toastr';
+
+@import '~ngx-toastr/toastr-bs4-alert';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
 .sub-menu li{
   display: block;
   padding: 0 25px;
@@ -62,3 +71,7 @@ nav ul li:hover>a{
 nav  li:hover > ul{
   display:  block;
 }
+
+/* toastr */
+
+

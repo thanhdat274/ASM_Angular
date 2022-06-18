@@ -26,7 +26,7 @@ export class SigninComponent implements OnInit {
   onSubmit(){
     this.authService.login(this.signin.value).subscribe(data => {
       localStorage.setItem('loggedInUser', JSON.stringify(data));
-      this.router.navigateByUrl('/admin');
+      this.router.navigateByUrl('/');
     });
   }
 }

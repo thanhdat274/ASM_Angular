@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../../type/products';
-import { ProductService } from '../../../services/product/product.service';
-import { CategoryType } from '../../../type/category';
+import { CategoryService } from '../../../services/category/category.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-client-cate-list-pro',
@@ -9,17 +8,26 @@ import { CategoryType } from '../../../type/category';
   styleUrls: ['./product-client-cate-list-pro.component.css']
 })
 export class ProductClientCateListProComponent implements OnInit {
-
-  products: Product[];
-  cate: CategoryType[]
-  constructor(private productService: ProductService) {
-    this.products = [];
-    this.cate =[]
-   }
+  productsByCate: any[] = [];
+  cateSlug: string;
+  cateName: string;
+  authorBook: any;
+  constructor(
+    private categoryService: CategoryService,
+    private activateRoute: ActivatedRoute,
+    private router:Router
+  ) {
+    this.cateSlug = '';
+    this.cateName = '';
+  }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((data)=>{
-      this.products = data;
-    })
+    this.cateSlug = this.activateRoute.snapshot.params['id'];
+    this.categoryService.listOneCateAndPro(this.cateSlug).subscribe((data) => {
+      console.log('data',data);
+
+      this.cateName = data.categoryId?.name;
+      this.productsByCate = data.product;
+    });
   }
 }
