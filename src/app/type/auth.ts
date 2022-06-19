@@ -1,13 +1,13 @@
-export type Auth={
+export type Auth = {
   email: string,
   password: number
 }
-export type LoginResponse={
+export type LoginResponse = {
   accessToken: string
   password: number
 }
 
-export type UserType ={
+export type UserType = {
   _id: number,
   name: string,
   email: string,

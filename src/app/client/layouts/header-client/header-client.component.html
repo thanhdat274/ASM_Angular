@@ -33,7 +33,6 @@
                     <li class="mx-4">
                         <a routerLink="/auth/signin">Đăng nhập</a>
                     </li>
-
                 </ul>
                 <ul class="flex" *ngIf="userLogin &&userLogin!==null ">
                   <li class="mx-4">
@@ -48,7 +47,6 @@
                   <li class="mx-4" *ngIf="userLogin && userLogin?.user?.role =='1'">
                     <a routerLink="/admin">Dashboard</a>
                 </li>
-                  <!-- <li *ngIf="loggedInUser.role === 'admin'"><a class="dropdown-item" [routerLink]="'/admin'">Dashboard</a></li> -->
               </ul>
             </div>
         </div>

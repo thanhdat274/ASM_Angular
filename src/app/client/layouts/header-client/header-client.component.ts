@@ -32,10 +32,10 @@ export class HeaderClientComponent implements OnInit {
     })
   }
   logout() {
-    let cf = window.confirm("Logout now ?");
+    let cf = window.confirm("Bạn chắc chắn muốn đăng xuất?");
     if (cf) {
       localStorage.removeItem('loggedInUser');
-      this.toastr.success("Logout success");
+      this.toastr.success("Đăng xuất thành công");
 
       setTimeout(() => {
         this.router.navigate(['/auth/signin'])

@@ -12,14 +12,14 @@ import { LocalStorageService } from '../../../services/LocalStorage/local-storag
   styleUrls: ['./product-client-detail.component.css']
 })
 export class ProductClientDetailComponent implements OnInit {
-  _id: string ;
-  product : Product;
+  _id: string;
+  product: Product;
   cartValue: number;
   constructor(
     private activateRoute: ActivatedRoute,
     private productService: ProductService,
     private lsService: LocalStorageService
-    ) {
+  ) {
     this._id = '';
     this.product = {
       _id: 0,
@@ -33,7 +33,7 @@ export class ProductClientDetailComponent implements OnInit {
       categoryId: 0
     }
     this.cartValue = 1;
-   }
+  }
 
   ngOnInit(): void {
     this._id = this.activateRoute.snapshot.params['id'];

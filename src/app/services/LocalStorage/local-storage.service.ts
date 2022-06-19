@@ -17,7 +17,7 @@ export class LocalStorageService {
     return JSON.parse(localStorage.getItem('cart') || '[]');
   }
 
-  setItem(addItem:ProductCart) {
+  setItem(addItem: ProductCart) {
     const cartItems = this.getItem();
     const existItem = cartItems.find((item: ProductCart) =>
       item._id === addItem._id

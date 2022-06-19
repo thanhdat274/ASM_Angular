@@ -8,9 +8,9 @@ describe('AdminCategoryFormEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminCategoryFormEditComponent ]
+      declarations: [AdminCategoryFormEditComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

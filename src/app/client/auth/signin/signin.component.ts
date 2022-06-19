@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class SigninComponent implements OnInit {
   signin: FormGroup;
   constructor(
-    private authService:AuthService,
+    private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
   ) {
@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit() {
     this.authService.login(this.signin.value).subscribe(data => {
       localStorage.setItem('loggedInUser', JSON.stringify(data));
       this.toastr.success("Đăng nhập thành công. Chuyển trang sau 2s")

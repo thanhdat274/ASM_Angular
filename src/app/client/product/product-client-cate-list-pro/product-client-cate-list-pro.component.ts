@@ -15,7 +15,7 @@ export class ProductClientCateListProComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private activateRoute: ActivatedRoute,
-    private router:Router
+    private router: Router
   ) {
     this.cateSlug = '';
     this.cateName = '';
@@ -24,7 +24,7 @@ export class ProductClientCateListProComponent implements OnInit {
   ngOnInit(): void {
     this.cateSlug = this.activateRoute.snapshot.params['id'];
     this.categoryService.listOneCateAndPro(this.cateSlug).subscribe((data) => {
-      console.log('data',data);
+      console.log('data', data);
 
       this.cateName = data.categoryId?.name;
       this.productsByCate = data.product;

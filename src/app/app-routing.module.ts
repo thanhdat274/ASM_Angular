@@ -47,7 +47,7 @@ const routes: Routes = [
         component: ProductClientCateListProComponent
       },
       {
-        path:'cart',
+        path: 'cart',
         component: CartComponent
       }
     ]
@@ -56,18 +56,18 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     canActivate: [CanAccessAdminGuard],
-    children:[
+    children: [
       {
-        path:'',
+        path: '',
         component: DashboardComponent
       },
       {
-        path:'category',
+        path: 'category',
         component: CategoryAdminComponent,
-        children:[
+        children: [
           {
-            path:'',
-            component:AdminCategoryListComponent
+            path: '',
+            component: AdminCategoryListComponent
           },
           {
             path: 'add',
@@ -80,12 +80,12 @@ const routes: Routes = [
         ]
       },
       {
-        path:'products',
+        path: 'products',
         component: ProductAdminComponent,
-        children:[
+        children: [
           {
             path: '',
-            component:AdminProductListComponent
+            component: AdminProductListComponent
           },
           {
             path: 'add',
@@ -124,13 +124,13 @@ const routes: Routes = [
   {
     path: 'auth',
     component: ClientComponent,
-    children:[
+    children: [
       {
-        path:'signin',
+        path: 'signin',
         component: SigninComponent
       },
       {
-        path:'signup',
+        path: 'signup',
         component: SignupComponent
       },
     ]
@@ -140,7 +140,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers:[CanAccessAdminGuard]
+  providers: [CanAccessAdminGuard]
 })
 export class AppRoutingModule { }
 //trst đi okiii

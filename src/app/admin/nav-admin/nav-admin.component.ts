@@ -17,9 +17,14 @@ export class NavAdminComponent implements OnInit {
   ngOnInit(): void {
   }
   logout() {
-    localStorage.removeItem('loggedInUser');
-    this.toastr.success('Logout success');
-    this.router.navigate(['/auth/signin']);
+    let cf = window.confirm("Bạn chắc chắn muốn đăng xuất?");
+    if (cf) {
+      localStorage.removeItem('loggedInUser');
+      this.toastr.success("Đăng xuất thành công");
+      setTimeout(() => {
+        this.router.navigate(['/auth/signin'])
+      }, 1000);
+    }
   }
 
 }

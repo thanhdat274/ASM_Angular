@@ -8,9 +8,9 @@ describe('ProductClientCateListProComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductClientCateListProComponent ]
+      declarations: [ProductClientCateListProComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

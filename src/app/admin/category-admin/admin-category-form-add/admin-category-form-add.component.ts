@@ -16,8 +16,8 @@ export class AdminCategoryFormAddComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService
   ) {
-    this.cateForm =new FormGroup({
-      name: new FormControl('',[
+    this.cateForm = new FormGroup({
+      name: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(32)
@@ -28,7 +28,7 @@ export class AdminCategoryFormAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit() {
     const submitData = this.cateForm.value;
     return this.categoryService.addCate(submitData).subscribe(data => {
       this.toastr.success("Thêm mới thành công. Chuyển trang sau 2s")

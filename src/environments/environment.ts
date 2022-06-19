@@ -11,9 +11,9 @@ export const environment = {
   signin: `${apiUrl}/signin`,
   signup: `${apiUrl}/signup`,
   user: `${apiUrl}/user`,
-  firebaseConfig : {
+  firebaseConfig: {
     apiKey: "AIzaSyBJwmBQUCQ53gMXh2MTIK4M2H3I68bc7bk",
-    databaseUrl:'https://asm-angular-32b58-default-rtdb.firebaseio.com/',
+    databaseUrl: 'https://asm-angular-32b58-default-rtdb.firebaseio.com/',
     authDomain: "asm-angular-32b58.firebaseapp.com",
     projectId: "asm-angular-32b58",
     storageBucket: "asm-angular-32b58.appspot.com",

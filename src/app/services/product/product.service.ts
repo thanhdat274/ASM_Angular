@@ -10,19 +10,19 @@ import { Product } from 'src/app/type/products';
 export class ProductService {
 
   constructor(private http: HttpClient) { }
-  getProducts(): Observable<Product[]>{
+  getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(environment.products)
   }
-  getProduct(_id: string): Observable<Product>{
+  getProduct(_id: string): Observable<Product> {
     return this.http.get<Product>(`${environment.products}/${_id}`)
   }
-  deleteProduct(_id: string|number): Observable<any>{
+  deleteProduct(_id: string | number): Observable<any> {
     return this.http.delete(`${environment.products}/${_id}`)
   }
-  addProducts(data: Product):Observable<Product> {
+  addProducts(data: Product): Observable<Product> {
     return this.http.post<Product>(`${environment.products}`, data)
   }
-  updateProduct(_id: string | number, data: Product):Observable<Product>{
+  updateProduct(_id: string | number, data: Product): Observable<Product> {
     return this.http.put<Product>(`${environment.products}/${_id}`, data)
   }
 }

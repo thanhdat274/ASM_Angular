@@ -12,10 +12,10 @@ export class ProductClientListComponent implements OnInit {
   products: Product[];
   constructor(private productService: ProductService) {
     this.products = [];
-   }
+  }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((data)=>{
+    this.productService.getProducts().subscribe((data) => {
       this.products = data;
     })
   }

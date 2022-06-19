@@ -8,9 +8,9 @@ describe('ShowValidateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowValidateComponent ]
+      declarations: [ShowValidateComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

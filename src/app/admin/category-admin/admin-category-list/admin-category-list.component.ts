@@ -14,20 +14,20 @@ export class AdminCategoryListComponent implements OnInit {
     private categoryService: CategoryService,
     private toastr: ToastrService
 
-    ) {
-    this.category=[]
-   }
+  ) {
+    this.category = []
+  }
 
-   ngOnInit(): void {
-    this.categoryService.listCate().subscribe((data)=>{
+  ngOnInit(): void {
+    this.categoryService.listCate().subscribe((data) => {
       this.category = data;
     })
   }
 
-  onDelete(_id: number){
+  onDelete(_id: number) {
     const confirmDelete = confirm('Bạn chắc chắn muốn xóa không!');
-    if(confirmDelete && _id){
-      this.categoryService.deleteCate(_id).subscribe((data)=>{
+    if (confirmDelete && _id) {
+      this.categoryService.deleteCate(_id).subscribe((data) => {
         this.toastr.success('Bạn đã xóa thành công');
         this.ngOnInit()
       })

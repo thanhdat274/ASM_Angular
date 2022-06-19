@@ -14,27 +14,27 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  login(data: Auth):Observable<LoginResponse>{
+  login(data: Auth): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${environment.signin}`, data)
   }
-  signUp(data: Auth):Observable<UserType>{
+  signUp(data: Auth): Observable<UserType> {
     return this.http.post<UserType>(`${environment.signup}`, data)
   }
 
 
-  listUser(): Observable<UserType[]>{
+  listUser(): Observable<UserType[]> {
     return this.http.get<UserType[]>(environment.user)
   }
-  listOneUser(_id: string): Observable<UserType>{
+  listOneUser(_id: string): Observable<UserType> {
     return this.http.get<UserType>(`${environment.user}/${_id}`)
   }
-  deleteUser(_id: string|number): Observable<any>{
+  deleteUser(_id: string | number): Observable<any> {
     return this.http.delete(`${environment.user}/${_id}`)
   }
-  addUser(data: UserType):Observable<UserType> {
+  addUser(data: UserType): Observable<UserType> {
     return this.http.post<UserType>(`${environment.user}`, data)
   }
-  updateUser(_id: string | number, data: UserType):Observable<UserType>{
+  updateUser(_id: string | number, data: UserType): Observable<UserType> {
     return this.http.put<UserType>(`${environment.user}/${_id}`, data)
   }
 }

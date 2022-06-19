@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
 
   onSetCart() {
     this.cartItems = this.lsService.getItem();
-    this.cartItemValues = this.cartItems.reduce((a:any, b:any) => a + b.tien, 0);
+    this.cartItemValues = this.cartItems.reduce((a: any, b: any) => a + b.tien, 0);
   }
 
   onDelete(_id: any) {
@@ -37,7 +37,7 @@ export class CartComponent implements OnInit {
       this.lsService.setCart(this.cartItems)
     }
   }
-  onTangSl(_id: string){
+  onTangSl(_id: string) {
     console.log(_id);
     const existItem = this.cartItems.find((item: any) => item._id === _id);
     console.log(existItem);
@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
     this.lsService.setCart(this.cartItems);
   }
 
-  onGiamSl(_id: string){
+  onGiamSl(_id: string) {
     console.log(_id);
     const existItem = this.cartItems.find((item: any) => item._id === _id);
     console.log(existItem);
