@@ -10,19 +10,23 @@
                   <div>
                       <label class="block" for="Name">Họ và tên <span class="text-red-500">*</span></label>
                       <input type="text" name="name-user" formControlName="name" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                  <app-show-validate [field]="signup.get('name')"></app-show-validate>
+
                   </div>
                   <div class="mt-4">
                       <label class="block" for="email">Địa chỉ email <span class="text-red-500">*</span></label>
                       <input type="text" name="email" formControlName="email" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                      <app-show-validate [field]="signup.get('email')"></app-show-validate>
                   </div>
                   <div class="mt-4">
                       <label class="block">Mật khẩu <span class="text-red-500">*</span></label>
                       <input type="password" name="password" formControlName="password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                      <app-show-validate [field]="signup.get('password')"></app-show-validate>
                   </div>
                   <div class="flex mt-[20px]">
-                      <button class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Đăng ký</button>
+                      <button [disabled]="!signup.valid" class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Đăng ký</button>
                   </div>
-                  <div class="mt-6 text-grey-dark">Bạn đã có tài khoản? <a class="text-blue-600 hover:underline" href="/signin">Đăng nhập</a></div>
+                  <div class="mt-6 text-grey-dark">Bạn đã có tài khoản? <a class="text-blue-600 hover:underline" routerLink="/auth/signin">Đăng nhập</a></div>
               </div>
           </form>
       </div>

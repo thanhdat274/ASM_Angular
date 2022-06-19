@@ -27,6 +27,7 @@ export class CanAccessAdminGuard implements CanActivate {
         return false
       }
     } else {
+      this.toasrt.info("Bạn chưa đăng nhập. Vui lòng mời bạn đăng nhập!");
       this.router.navigateByUrl('/auth/signin')
       return false;
     }

@@ -11,7 +11,6 @@ export class ProductClientCateListProComponent implements OnInit {
   productsByCate: any[] = [];
   cateSlug: string;
   cateName: string;
-  authorBook: any;
   constructor(
     private categoryService: CategoryService,
     private activateRoute: ActivatedRoute,
